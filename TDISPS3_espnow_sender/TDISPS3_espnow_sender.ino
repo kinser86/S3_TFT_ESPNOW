@@ -1,3 +1,7 @@
+// The purpose of this script is to transmit data via ESPNOW to a single registered ESP32 device.
+// This program was written to be run on a ESP32C3.
+// The data being transmitted is the temperature readings from two Dallas DS18B20 sensors.
+
 // Libraries
 #include <esp_now.h>      // esp_now library
 #include <WiFi.h>         // WiFi library
@@ -23,7 +27,7 @@ DallasTemperature sensors(&oneWire);
 uint8_t sensor1[8] = {0x28, 0x45, 0x97, 0x2A, 0x07, 0x00, 0x00, 0x77};
 uint8_t sensor2[8] = {0x28, 0x58, 0x79, 0x2A, 0x07, 0x00, 0x00, 0x1E};
 
-// Responder MAC address
+// LILIYGO T-Display S3 MAC address
 uint8_t receiverAdd[] = {0x3C, 0x84, 0x27, 0xC1, 0x39, 0x54};
 
 // Define data structure
